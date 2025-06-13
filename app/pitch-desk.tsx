@@ -80,8 +80,8 @@ export default function PitchDeck() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
         <div className="space-y-4 md:space-y-6">
           <p className="pl-2 text-base md:text-xl lg:text-2xl">
-            I'm David Clinton. I enjoy building things that are clear, fast, and
-            actually useful.
+            I&apos;m David Clinton. I enjoy building things that are clear,
+            fast, and actually useful.
           </p>
           <p className="pl-2 text-base md:text-xl lg:text-2xl">
             I care about making tech easy to understand, scalable, and feel a
@@ -255,7 +255,7 @@ export default function PitchDeck() {
         <div className="w-3 md:w-6 h-6 md:h-12 bg-[#E8D8C9] rounded-r-full"></div>
       </div>
       <h2 className="text-white text-[10vw] md:text-[8vw] font-black mb-6 md:mb-12">
-        LET'S TALK
+        LET&apos;S TALK
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div>
