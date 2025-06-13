@@ -7,7 +7,6 @@ export default function PitchDeck() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const currentDate = "JUNE 13, 2025";
 
-  // Simple functions to go to next/previous slide
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
       setCurrentSlide(currentSlide + 1);
@@ -20,13 +19,11 @@ export default function PitchDeck() {
     }
   };
 
-  // Handle keyboard navigation
   const handleKeyDown = (e: any) => {
     if (e.key === "ArrowRight") nextSlide();
     if (e.key === "ArrowLeft") prevSlide();
   };
 
-  // Handle touch/swipe navigation
   let startX = 0;
 
   const handleTouchStart = (e: any) => {
@@ -37,14 +34,11 @@ export default function PitchDeck() {
     const endX = e.changedTouches[0].clientX;
     const difference = startX - endX;
 
-    // If swipe is more than 50px, change slide
-    if (difference > 50) nextSlide(); // Swipe left = next slide
-    if (difference < -50) prevSlide(); // Swipe right = previous slide
+    if (difference > 50) nextSlide();
+    if (difference < -50) prevSlide();
   };
 
-  // All the slides (removed the agenda slide)
   const slides = [
-    // Title Slide
     <div
       key="title"
       className="w-full h-full bg-[#FF5D3B] flex flex-col justify-center relative p-4 md:p-8 lg:p-12"
@@ -71,7 +65,6 @@ export default function PitchDeck() {
       </div>
     </div>,
 
-    // About Me Slide
     <div
       key="about"
       className="w-full h-full bg-[#FF5D3B] flex flex-col justify-center p-4 md:p-8 lg:p-12"
@@ -86,11 +79,11 @@ export default function PitchDeck() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
         <div className="space-y-4 md:space-y-6">
-          <p className="text-base md:text-xl lg:text-2xl">
+          <p className="pl-2 text-base md:text-xl lg:text-2xl">
             I'm David Clinton. I enjoy building things that are clear, fast, and
             actually useful.
           </p>
-          <p className="text-base md:text-xl lg:text-2xl">
+          <p className="pl-2 text-base md:text-xl lg:text-2xl">
             I care about making tech easy to understand, scalable, and feel a
             little more human.
           </p>
@@ -109,7 +102,6 @@ export default function PitchDeck() {
       </div>
     </div>,
 
-    // Experience Slide
     <div
       key="experience"
       className="w-full h-full bg-[#00A99D] flex flex-col justify-center p-4 md:p-8 lg:p-12"
@@ -152,7 +144,6 @@ export default function PitchDeck() {
       </div>
     </div>,
 
-    // Projects Slide
     <div
       key="projects"
       className="w-full h-full bg-[#C69C6D] flex flex-col justify-center p-4 md:p-8 lg:p-12"
@@ -198,7 +189,6 @@ export default function PitchDeck() {
       </div>
     </div>,
 
-    // Services Slide
     <div
       key="services"
       className="w-full h-full bg-[#E94E77] flex flex-col justify-center p-4 md:p-8 lg:p-12"
