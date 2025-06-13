@@ -19,18 +19,18 @@ export default function PitchDeck() {
     }
   };
 
-  const handleKeyDown = (e: any) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowRight") nextSlide();
     if (e.key === "ArrowLeft") prevSlide();
   };
 
   let startX = 0;
 
-  const handleTouchStart = (e: any) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     startX = e.touches[0].clientX;
   };
 
-  const handleTouchEnd = (e: any) => {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     const endX = e.changedTouches[0].clientX;
     const difference = startX - endX;
 
@@ -245,7 +245,6 @@ export default function PitchDeck() {
       </div>
     </div>,
 
-    // Contact Slide
     <div
       key="contact"
       className="w-full h-full bg-black flex flex-col justify-center p-4 md:p-8 lg:p-12"
@@ -264,7 +263,7 @@ export default function PitchDeck() {
             Get in Touch
           </h3>
           <div className="space-y-2 md:space-y-4 text-white text-base md:text-lg lg:text-xl">
-            <p>DAVECLINTONN33@GMAIL.COM</p>
+            <p>daveclintonn33@gmail.com</p>
             <p>DAVECLINTONS AGENCY</p>
           </div>
         </div>
@@ -309,7 +308,7 @@ export default function PitchDeck() {
       onKeyDown={handleKeyDown}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      tabIndex={0} // Makes the div focusable for keyboard events
+      tabIndex={0}
     >
       {/* Show the current slide */}
       {slides[currentSlide]}
